@@ -5,13 +5,15 @@ const Login = () => {
     const [login, setLogin] = useState(false);
 
     return (
-        <div className=' relative flex items-center justify-around h-full w-full'>
+        <div className=' relative flex items-center justify-around h-full w-full overflow-hidden'>
             {/* Animação */}
-            <div className={`absolute right-0 border border-blue-600/10 h-full w-[50%] backdrop-blur-md bg-blue-600/70 shadow-2xl shadow-blue-600/80 rounded-2xl duration-500  ${login ? 'right-0' : ''} ${register ? '-translate-x-full ' : ''}`}>
+            <div className={`hidden lg:flex absolute right-0 border border-blue-600/10 h-full w-[50%] backdrop-blur-md bg-blue-600/70 shadow-2xl shadow-blue-600/80 rounded-2xl duration-500  ${login ? 'right-0' : ''} ${register ? '-translate-x-full ' : ''}`}>
             </div>
 
             {/* Area de login */}
-            <div className={`h-full flex flex-col items-center justify-center`}>
+
+            {/* Versao desktop */}
+            <div className={`h-full hidden sm:flex flex-col items-center justify-center `}>
                 <form>
                     <div className='flex flex-col gap-2 mb-6'>
                         <label className='font-bold'>Usuário</label>
@@ -31,9 +33,10 @@ const Login = () => {
                 </div>
             </div>
 
-
             {/* Area de registro */}
-            <div className={`hidden  md:flex h-full flex-col items-center justify-center`}>
+
+            {/* Versão desktop */}
+            <div className={`hidden lg:flex h-full flex-col items-center justify-center`}>
                 <form>
                     <div className='flex flex-col gap-2 mb-6'>
                         <label className='font-bold'>Nome e sobrenome</label>
